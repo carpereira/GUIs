@@ -4,9 +4,7 @@
 // Função auxiliar que desconta o tempo passado
 int AUX_WaitEventTimeout(SDL_Event* evt, Uint32* ms) {
     Uint32 antes = SDL_GetTicks();
-
     int ret = SDL_WaitEventTimeout(evt, *ms);
-
     Uint32 decorrido = SDL_GetTicks() - antes;
 
     if (*ms > decorrido) {
@@ -14,7 +12,6 @@ int AUX_WaitEventTimeout(SDL_Event* evt, Uint32* ms) {
     } else {
         *ms = 0;
     }
-
     return ret;
 }
 
@@ -34,8 +31,7 @@ int main(int argc, char* args[])
 
     while (!quit) {        
         SDL_Event evt;
-
-        // Usa a função auxiliar
+        
         int gotEvent = AUX_WaitEventTimeout(&evt, &espera);
 
         if (gotEvent) {             
