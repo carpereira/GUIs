@@ -59,8 +59,6 @@ int main(int argc, char* args[])
                     if (t.x < 0) t.x = 0;                
                     if (t.x > 340) t.x = 340;                
                 }
-
-            } while (SDL_PollEvent(&evt));
         } else {
             // movimento automático
             if (r.x < 340) r.x += 2;
