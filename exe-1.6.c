@@ -21,8 +21,8 @@ int main(int argc, char* args[])
     bool quit = false;
 
     bool fim = false;
-    char ordem[3] = "";  // guarda ordem de chegada, ex: "rts"
-    int colocados = 0;   // quantos já chegaram
+    char ordem[3] = "";  
+    int chegada = 0;   
 
     while (!quit) {
         // espera até 500ms por evento
@@ -71,16 +71,15 @@ int main(int argc, char* args[])
         // --- CHECAGEM DE CHEGADA ---
         if (!fim) {
             if (r.x >= 340 && !strchr(ordem, 'r')) {
-                ordem[colocados++] = 'r';
+                ordem[chegada++] = 'r';
             }
             if (s.x >= 340 && !strchr(ordem, 's')) {
-                ordem[colocados++] = 's';
+                ordem[chegada++] = 's';
             }
             if (t.x >= 340 && !strchr(ordem, 't')) {
-                ordem[colocados++] = 't';
+                ordem[chegada++] = 't';
             }
 
-            // só declara vencedor quando os 3 chegaram
             if (colocados == 3) {
                 ordem[3] = '\0';
                 printf("Ordem de chegada: ");
