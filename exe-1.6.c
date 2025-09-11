@@ -80,7 +80,7 @@ int main(int argc, char* args[])
                 ordem[chegada++] = 't';
             }
 
-            if (colocados == 3) {
+            if (chegada == 3) {
                 ordem[3] = '\0';
                 printf("Ordem de chegada: ");
                 for (int i = 0; i < 3; i++) {
