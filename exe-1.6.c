@@ -1,6 +1,7 @@
 #include <SDL2/SDL.h>
 #include <stdbool.h>
 #include <stdio.h>
+#include <string.h> // para strchr
 
 int main(int argc, char* args[])
 {
@@ -29,36 +30,34 @@ int main(int argc, char* args[])
         int isevt = SDL_WaitEventTimeout(&evt, 500);
 
         if (isevt) {
-            do {
-                if (evt.type == SDL_QUIT)
-                    quit = true;
+            if (evt.type == SDL_QUIT) {
+                quit = true;
+            }
+            else if (evt.type == SDL_KEYDOWN) {
+                // controla retângulo azul (r)
+                switch (evt.key.keysym.sym) {                    
+                    case SDLK_LEFT:                     
+                        if (r.x > 0) r.x -= 5; 
+                        break;
+                    case SDLK_RIGHT: 
+                        if (r.x < 340) r.x += 5; 
+                        break;
 
-                else if (evt.type == SDL_KEYDOWN) {
-                    // controla retângulo azul (r)
-                    switch (evt.key.keysym.sym) {                    
-                        case SDLK_LEFT:                     
-                            if (r.x > 0) r.x -= 5; 
-                            break;
-                        case SDLK_RIGHT: 
-                            if (r.x < 340) r.x += 5; 
-                            break;
-
-                        // controla retângulo verde (s)                    
-                        case SDLK_a: 
-                            if (s.x > 0) s.x -= 5; 
-                            break;
-                        case SDLK_d: 
-                            if (s.x < 340) s.x += 5; 
-                            break;
-                    }
+                    // controla retângulo verde (s)                    
+                    case SDLK_a: 
+                        if (s.x > 0) s.x -= 5; 
+                        break;
+                    case SDLK_d: 
+                        if (s.x < 340) s.x += 5; 
+                        break;
                 }
-
-                else if (evt.type == SDL_MOUSEMOTION) {
-                    // centraliza retângulo vermelho no cursor
-                    t.x = evt.motion.x - t.w / 2;                
-                    if (t.x < 0) t.x = 0;                
-                    if (t.x > 340) t.x = 340;                
-                }
+            }
+            else if (evt.type == SDL_MOUSEMOTION) {
+                // centraliza retângulo vermelho no cursor
+                t.x = evt.motion.x - t.w / 2;                
+                if (t.x < 0) t.x = 0;                
+                if (t.x > 340) t.x = 340;                
+            }
         } else {
             // movimento automático
             if (r.x < 340) r.x += 2;
@@ -115,5 +114,4 @@ int main(int argc, char* args[])
     SDL_DestroyWindow(win);
     SDL_Quit();
     return 0;
-}
 
