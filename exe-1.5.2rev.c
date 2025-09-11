@@ -1,7 +1,6 @@
 #include <SDL2/SDL.h>
 #include <stdbool.h>
 
-// Função auxiliar que desconta o tempo passado
 int AUX_WaitEventTimeout(SDL_Event* evt, Uint32* ms) {
     Uint32 antes = SDL_GetTicks();
     int ret = SDL_WaitEventTimeout(evt, *ms);
@@ -32,9 +31,9 @@ int main(int argc, char* args[])
     while (!quit) {        
         SDL_Event evt;
         
-        int gotEvent = AUX_WaitEventTimeout(&evt, &espera);
+        int originEvent = AUX_WaitEventTimeout(&evt, &espera);
 
-        if (gotEvent) {             
+        if (originEvent) {             
             if (evt.type == SDL_QUIT) {
                 quit = true;
             }
