@@ -21,7 +21,7 @@ int main(int argc, char* args[])
     bool quit = false;
 
     bool fim = false;
-    char ordem[3] = "";  
+    char ordem[4] = "";  
     int chegada = 0;   
 
     while (!quit) {
