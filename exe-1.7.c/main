@@ -1,1 +1,132 @@
+#include <assert.h>
+#include <SDL2/SDL.h>
+#include <stdbool.h>
+#include <SDL2/SDL_image.h>
+#define max 5
 
+int main (int argc, char* args[])
+{
+    /* INICIALIZACAO */
+    SDL_Init(SDL_INIT_EVERYTHING);
+    IMG_Init(IMG_INIT_PNG);
+    SDL_Window* win = SDL_CreateWindow("Animando e Movendo um Pássaro",
+                         SDL_WINDOWPOS_UNDEFINED,
+                         SDL_WINDOWPOS_UNDEFINED,
+                         300, 300, SDL_WINDOW_SHOWN
+                      );
+    SDL_Renderer* ren = SDL_CreateRenderer(win, -1, 0);
+    SDL_Texture* img = IMG_LoadTexture(ren, "bird.png");
+    assert(img != NULL);
+    bool quit = false;
+
+    /* EXECUÇÃO */
+    SDL_Texture* birdTex = IMG_LoadTexture(ren, "bird.png");
+    SDL_Texture* bird1Tex = IMG_LoadTexture(ren, "bird.png");
+    SDL_Texture* bird2Tex = IMG_LoadTexture(ren, "bird.png");  
+    
+    int isup = 1;    
+    SDL_Rect r = { 0, 0, 30, 30};
+    SDL_Rect s = {270, 270, 30, 30};
+    SDL_Rect t = {120, 120, 100, 60};
+    SDL_Rect c;
+    
+    
+    while(1){
+        
+    SDL_Event evt;              
+             
+    int isevt = SDL_WaitEventTimeout(&evt,500);
+        
+    if (isevt){        
+        int i;
+        for(i=1;i<=max;i++){
+            switch (i) {
+                case 1:                        
+                    while (r.y<270){                    
+                    SDL_SetRenderDrawColor(ren, 255,255,255,0);
+                    SDL_RenderClear(ren);
+                    if (isup){
+                        c = (SDL_Rect) {0, 0, 100, 80};
+                    } else {
+                        c = (SDL_Rect) {100, 0, 100, 80};
+                    }                   
+                    SDL_RenderCopy(ren, birdTex, &c, &r);
+                    SDL_RenderPresent(ren);
+                    SDL_Delay(100);                    
+                    r.y += 5;                    
+                    isup = !isup;
+                }
+                    break;
+                case 2:                            
+                    while (r.x<270){                    
+                    SDL_SetRenderDrawColor(ren, 255,255,255,0);
+                    SDL_RenderClear(ren);
+                    if (isup){
+                        c = (SDL_Rect) {0, 0, 100, 80};
+                    } else {
+                        c = (SDL_Rect) {100, 0, 100, 80};
+                    } 
+                    SDL_RenderCopy(ren, birdTex, &c, &r);
+                    SDL_RenderPresent(ren);
+                    SDL_Delay(100);
+                    r.x += 5;
+                    isup = !isup;
+                }
+                    break;
+                case 3:                                
+                    while (s.y>0){                    
+                    SDL_SetRenderDrawColor(ren, 255,255,255,0);
+                    SDL_RenderClear(ren);
+                    if (isup){
+                        c = (SDL_Rect) {0, 0, 100, 80};
+                    } else {
+                        c = (SDL_Rect) {100, 0, 100, 80};
+                    }                     
+                    SDL_RenderCopy(ren, bird1Tex, &c, &s);
+                    SDL_RenderPresent(ren);
+                    SDL_Delay(100);
+                    s.y -= 5;
+                    isup = !isup;
+                }
+                    break;
+                case 4:                                    
+                    while (s.x>0){                    
+                    SDL_SetRenderDrawColor(ren, 255,255,255,0);
+                    SDL_RenderClear(ren);
+                    if (isup){
+                        c = (SDL_Rect) {0, 0, 100, 80};
+                    } else {
+                        c = (SDL_Rect) {100, 0, 100, 80};
+                    }                     
+                    SDL_RenderCopy(ren, bird1Tex, &c, &s);
+                    SDL_RenderPresent(ren);
+                    SDL_Delay(100);
+                    s.x -= 5;
+                    isup = !isup;
+                }
+                    break; 
+                case 5:                        
+                    SDL_SetRenderDrawColor(ren, 0,0,0,0);
+                    SDL_RenderClear(ren);                    
+                    SDL_RenderCopy(ren, bird2Tex, NULL, &t);
+                    SDL_RenderPresent(ren);
+                    t.x=120;
+                    t.y=120;
+                    break;            
+            }
+                } 
+    }
+    if (evt.type == SDL_QUIT){
+        quit = true;
+        break;
+    }
+    }     
+    
+    /* FINALIZACAO */
+    SDL_DestroyTexture(birdTex);
+    SDL_DestroyTexture(bird1Tex);
+    SDL_DestroyTexture(bird2Tex);
+    SDL_DestroyRenderer(ren);
+    SDL_DestroyWindow(win);
+    SDL_Quit();
+}
