@@ -6,7 +6,7 @@
 #define VELOCIDADE 30.0f
 #define BATIDA_INTERVALO 250
 
-// ✅ Adicionada a função auxiliar
+// função auxiliar
 int AUX_WaitEventTimeout(SDL_Event* evt, Uint32* ms) {
     Uint32 antes = SDL_GetTicks();
     int ret = SDL_WaitEventTimeout(evt, *ms);
