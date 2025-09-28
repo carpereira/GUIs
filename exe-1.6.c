@@ -1,7 +1,24 @@
 #include <SDL2/SDL.h>
 #include <stdbool.h>
 #include <stdio.h>
-#include <string.h> // para strchr
+#include <string.h> 
+
+// Função auxiliar que desconta o tempo passado
+int AUX_WaitEventTimeout(SDL_Event* evt, Uint32* ms) {
+    Uint32 antes = SDL_GetTicks();
+
+    int ret = SDL_WaitEventTimeout(evt, *ms);
+
+    Uint32 decorrido = SDL_GetTicks() - antes;
+
+    if (*ms > decorrido) {
+        *ms -= decorrido;
+    } else {
+        *ms = 0;
+    }
+
+    return ret;
+}
 
 int main(int argc, char* args[])
 {
@@ -20,16 +37,19 @@ int main(int argc, char* args[])
     SDL_Rect w = {350, 10, 5, 380}; // linha de chegada
     SDL_Event evt;
     bool quit = false;
+    Uint32 espera = 500;
 
     bool fim = false;
     char ordem[4] = "";  
     int chegada = 0;   
 
-    while (!quit) {
-        // espera até 500ms por evento
-        int isevt = SDL_WaitEventTimeout(&evt, 500);
+    while (!quit) {        
+        SDL_Event evt;
 
-        if (isevt) {
+        // Usa a função auxiliar
+        int gotEvent = AUX_WaitEventTimeout(&evt, &espera);
+
+        if (gotEvent) {             
             if (evt.type == SDL_QUIT) {
                 quit = true;
             }
@@ -59,6 +79,9 @@ int main(int argc, char* args[])
                 if (t.x > 340) t.x = 340;                
             }
         } else {
+            // timeout atingido → reseta
+            espera = 500;
+
             // movimento automático
             if (r.x < 340) r.x += 2;
             if (s.x < 340) s.x += 3;
@@ -114,4 +137,5 @@ int main(int argc, char* args[])
     SDL_DestroyWindow(win);
     SDL_Quit();
     return 0;
+}
 
