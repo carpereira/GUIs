@@ -1,1 +1,15 @@
-
+O programa cria uma janela SDL2 com um retângulo azul que pode ser clicado, arrastado e cancelado.
+Resumo dos pontos principais:
+Inicialização: cria janela e renderer.
+Variáveis:
+dragging → indica se o retângulo está sendo arrastado.
+clicked → diferencia clique de arrasto (se houve movimento ou não).
+dragStart → guarda o deslocamento entre mouse e canto do retângulo.
+origPos → posição original usada no cancelamento.
+Eventos:
+MOUSEBUTTONDOWN dentro do retângulo → inicia arrasto.
+MOUSEMOTION durante arrasto → move o retângulo e marca que não é clique.
+MOUSEBUTTONUP → se não houve movimento: Click; se houve: Drop.
+KEYDOWN (ESC) → cancela, restaura posição original.
+SDL_QUIT → encerra.
+Renderização: limpa a tela de branco, desenha o retângulo azul e apresenta.
