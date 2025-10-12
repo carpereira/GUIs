@@ -1,10 +1,10 @@
-
+Máquina de Estado
 O código implementa uma máquina de estados para múltiplos cliques:
     • Detecta se cliques são parte de uma mesma sequência (usando tempo e posição).
     • Gera um evento customizado (MY_EVENT) indicando quantos cliques ocorreram.
     • Executa uma ação diferente para 1, 2, 3 ou 4 cliques.
 
-Máquina de Estado
+
 
 
 
