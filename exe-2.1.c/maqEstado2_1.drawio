@@ -1,0 +1,113 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36" version="28.2.6">
+  <diagram name="Página-1" id="0L4CvBB_3MZeE84FnJfP">
+    <mxGraphModel dx="802" dy="447" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="sX2OwVsKF5sni2FC-kUd-5" value="&lt;h2 data-end=&quot;1552&quot; data-start=&quot;1523&quot;&gt;&lt;strong data-end=&quot;1552&quot; data-start=&quot;1529&quot;&gt;&lt;/strong&gt;&lt;/h2&gt;&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;&lt;ol style=&quot;line-height: 100%;&quot; data-end=&quot;2131&quot; data-start=&quot;1554&quot;&gt;&lt;li data-end=&quot;1609&quot; data-start=&quot;1554&quot;&gt;&lt;h5&gt;&lt;font style=&quot;font-size: 12px;&quot;&gt;&lt;font face=&quot;Times New Roman&quot; style=&quot;line-height: 100%;&quot;&gt;&lt;strong style=&quot;&quot; data-end=&quot;1567&quot; data-start=&quot;1557&quot;&gt;ESPERA&lt;/strong&gt; → programa está ocioso aguardando clique.&lt;br&gt;&lt;/font&gt;&lt;font face=&quot;Times New Roman&quot; style=&quot;line-height: 100%;&quot;&gt;&lt;strong data-end=&quot;1633&quot; data-start=&quot;1613&quot;&gt;CONTANDO_CLIQUES&lt;/strong&gt; → primeiro clique detectado, sistema mede tempo entre próximos.&lt;br&gt;&lt;/font&gt;&lt;font face=&quot;Times New Roman&quot; style=&quot;line-height: 100%;&quot;&gt;Se novo clique ocorre dentro de &lt;strong data-end=&quot;1742&quot; data-start=&quot;1733&quot;&gt;250ms&lt;/strong&gt; e próximo da mesma posição → &lt;strong data-end=&quot;1795&quot; data-start=&quot;1772&quot;&gt;incrementa contador&lt;/strong&gt;.&lt;br&gt;&lt;/font&gt;&lt;font face=&quot;Times New Roman&quot; style=&quot;line-height: 100%;&quot;&gt;Se o tempo expira &lt;strong data-end=&quot;1824&quot; data-start=&quot;1818&quot;&gt;ou&lt;/strong&gt; o clique não é contínuo → o sistema gera um &lt;code data-end=&quot;1879&quot; data-start=&quot;1869&quot;&gt;MY_EVENT&lt;/code&gt; com número de cliques.&lt;br&gt;&lt;/font&gt;&lt;font face=&quot;Times New Roman&quot; style=&quot;line-height: 100%;&quot;&gt;&lt;strong data-end=&quot;1923&quot; data-start=&quot;1906&quot;&gt;EXECUTAR_AÇÃO&lt;/strong&gt; recebe o evento e:&lt;br&gt;&lt;/font&gt;&lt;font face=&quot;Times New Roman&quot; style=&quot;line-height: 100%;&quot;&gt;1 clique → limpa tela e pinta de verde.&lt;br&gt;&lt;/font&gt;&lt;font face=&quot;Times New Roman&quot; style=&quot;line-height: 100%;&quot;&gt;2 cliques → desenha retângulo (azul).&lt;br&gt;&lt;/font&gt;&lt;font face=&quot;Times New Roman&quot; style=&quot;line-height: 100%;&quot;&gt;3 cliques → preenche retângulo (vermelho).&lt;br&gt;&lt;/font&gt;&lt;font face=&quot;Times New Roman&quot; style=&quot;line-height: 100%;&quot;&gt;4 cliques → &lt;strong style=&quot;&quot; data-end=&quot;2130&quot; data-start=&quot;2096&quot;&gt;sai do programa (estado final)&lt;/strong&gt;.&lt;/font&gt;&lt;/font&gt;&lt;/h5&gt;&lt;br&gt;&lt;/li&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;/ol&gt;&lt;/h1&gt;" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="150" y="80" width="720" height="310" as="geometry" />
+        </mxCell>
+        <mxCell id="sX2OwVsKF5sni2FC-kUd-7" value="" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="400" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="sX2OwVsKF5sni2FC-kUd-8" value="" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="280" y="400" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="sX2OwVsKF5sni2FC-kUd-9" value="" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="520" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="sX2OwVsKF5sni2FC-kUd-10" value="" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="280" y="520" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="sX2OwVsKF5sni2FC-kUd-11" value="Espera" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="68" y="417" width="60" height="10" as="geometry" />
+        </mxCell>
+        <mxCell id="sX2OwVsKF5sni2FC-kUd-12" value="Contando Clique" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="305" y="405" width="70" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="sX2OwVsKF5sni2FC-kUd-13" value="Contando Evento" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="310" y="527" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="sX2OwVsKF5sni2FC-kUd-14" value="Executando Ação" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="68" y="527" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="sX2OwVsKF5sni2FC-kUd-15" value="" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="sX2OwVsKF5sni2FC-kUd-7" target="sX2OwVsKF5sni2FC-kUd-8">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="200" y="435" as="sourcePoint" />
+            <mxPoint x="270" y="420" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="sX2OwVsKF5sni2FC-kUd-16" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="sX2OwVsKF5sni2FC-kUd-9" target="sX2OwVsKF5sni2FC-kUd-7">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="90" y="510" as="sourcePoint" />
+            <mxPoint x="140" y="460" as="targetPoint" />
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="sX2OwVsKF5sni2FC-kUd-17" value="" style="endArrow=classic;html=1;rounded=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="sX2OwVsKF5sni2FC-kUd-10" target="sX2OwVsKF5sni2FC-kUd-9">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="190" y="540" as="sourcePoint" />
+            <mxPoint x="240" y="490" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="sX2OwVsKF5sni2FC-kUd-18" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="sX2OwVsKF5sni2FC-kUd-8" target="sX2OwVsKF5sni2FC-kUd-10">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="325" y="510" as="sourcePoint" />
+            <mxPoint x="375" y="460" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="sX2OwVsKF5sni2FC-kUd-19" value="" style="endArrow=classic;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="19" y="423" as="sourcePoint" />
+            <mxPoint x="40" y="423" as="targetPoint" />
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="sX2OwVsKF5sni2FC-kUd-20" value="" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.667;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="sX2OwVsKF5sni2FC-kUd-8" target="sX2OwVsKF5sni2FC-kUd-8">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="360" y="420" as="sourcePoint" />
+            <mxPoint x="410" y="370" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="430" y="420" />
+              <mxPoint x="430" y="380" />
+              <mxPoint x="360" y="380" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="sX2OwVsKF5sni2FC-kUd-21" value="1 - clique" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="539" y="390" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="sX2OwVsKF5sni2FC-kUd-22" value="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="185" y="393" width="60" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="sX2OwVsKF5sni2FC-kUd-23" value="2 - clique válido" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="530" y="413" width="113" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="sX2OwVsKF5sni2FC-kUd-24" value="2" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="415" y="391" width="60" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="sX2OwVsKF5sni2FC-kUd-25" value="3 - timeout" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="543" y="437" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="sX2OwVsKF5sni2FC-kUd-26" value="3" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="324" y="467" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="sX2OwVsKF5sni2FC-kUd-27" value="4" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="193" y="512" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="sX2OwVsKF5sni2FC-kUd-28" value="5" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="84" y="467" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="sX2OwVsKF5sni2FC-kUd-29" value="5 -&amp;nbsp;" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="360" y="340" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="sX2OwVsKF5sni2FC-kUd-30" value="4 - my-event" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="540" y="462" width="76" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="sX2OwVsKF5sni2FC-kUd-31" value="5 - após ação" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="528" y="487" width="108" height="30" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
